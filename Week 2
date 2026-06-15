@@ -1,0 +1,14 @@
+## Week 2 Monday — Registry Run key analysis
+
+### HKLM Run key (system-wide, requires admin to write)
+- SecurityHealth → %windir%\system32\SecurityHealthSystray.exe
+- Verdict: Legitimate — Windows Security tray icon
+
+### HKCU Run key (user-level, no admin required)  
+- OneDrive → C:\Users\MrAbT\AppData\Local\Microsoft\OneDrive\OneDrive.exe /background
+- Verdict: Legitimate — Microsoft OneDrive sync client
+
+### Key finding
+Clean baseline established. Two entries, both Microsoft, both
+expected paths. Any additional entries pointing to AppData\Roaming,
+Temp, or Public folders would be immediate red flags.
